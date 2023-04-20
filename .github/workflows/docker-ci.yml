@@ -6,7 +6,9 @@ env:
   GITHUB_DOCKER_IMAGE: "kryptokrona-payment-processor-js"
 
 on:
-  workflow_call:
+  push:
+    branches:
+      - master
 
 jobs:
   docker:
