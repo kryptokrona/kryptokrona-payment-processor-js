@@ -31,6 +31,8 @@ exports.getPaymentStatuses = function() {
   return globals.paymentStatuses
 }
 exports.start = async function() {
+  const {checkForWallet} = require('./utils/walletFunctions')
+  await checkForWallet(globals.walletName, globals.walletPass, globals.node, globals.port)
   const daemon = new WB.Daemon(globals.node, globals.port);
   
   let [wallet, error] = await WB.WalletBackend.openWalletFromFile(daemon, globals.walletName, globals.walletPass);

@@ -39,9 +39,9 @@ app.use('/generatePaymentID', generatePaymentIDRoute)
 
 
 // Start the web server
-app.listen(3000, function(err){
+app.listen(3030, function(err){
     if (err) console.log(err);
-    console.log("Server listening on port", 3000);
+    console.log("Server listening on port", 3030);
 });
 
 // Main function
