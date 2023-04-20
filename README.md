@@ -67,7 +67,7 @@ NOTE: Remember to update existing diagrams if there is some bigger improvements 
 
 ### Donate
 
-XKR: `SEKReXXU9aJPiwjX2XkpbK8ACMWbUNXcYPxUVSiUYpNdhj8Z2snEy8CjjorZUNyswQNfzAmVWuGksU72Sf3Kq79Zd3fJWHq4Nyx`
+XKR: `SEKReTq5Qoi3tch2zi3AD35xmhzrv6iBxVcPnfrqHv6PdHKEN3cdBm5aGxn7HLUq3d8xC2ZENrxCkQhT7mp2rjEdeqBMzjLup7x`
 
 ## Contributors
 
