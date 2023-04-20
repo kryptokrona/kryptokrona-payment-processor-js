@@ -1,5 +1,6 @@
 
-// Importing all the livs
+// Importing all the libs
+const WB = require('kryptokrona-wallet-backend-js');
 const globals = require('../globals.js')
 const fs = require('fs')
 const Crypto = require("kryptokrona-crypto").Crypto;
@@ -151,5 +152,23 @@ async function lookForTransaction(transaction) {
   })
 
 }
+/**
+ * Trim extra data to Box object.
+ *
+ * @param {String} extra - Extra data.
+ * @returns {String} Returns extra data to Box.
+ */
+function trimExtra(extra) {
+  // Extra data contains either a 66 or 78 prefix that isn't used for messages
+  try {
+      // Transaction from kryptokrona-service
+      let payload = fromHex(extra.substring(66))
+      let payload_json = JSON.parse(payload)
+      return fromHex(extra.substring(66))
+  } catch (e) {
+      // Transaction from kryptokrona-wallet-backend-js
+      return fromHex(Buffer.from(extra.substring(78)).toString())
+  }
+}
 
-module.exports = {checkForWallet, lookForTransaction, lookForPreliminaryTransaction, getKeyset, backgroundSyncTransactions, checkTx}
+module.exports = {checkForWallet, trimExtra, lookForTransaction, lookForPreliminaryTransaction, getKeyset, backgroundSyncTransactions, checkTx}
