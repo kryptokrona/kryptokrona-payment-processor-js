@@ -39,19 +39,15 @@ app.use('/generatePaymentID', generatePaymentIDRoute)
 
 
 // Start the web server
-app.listen(3030, function(err){
+app.listen(3030, async function(err){
     if (err) console.log(err);
     console.log("Server listening on port", 3030);
-});
-
-// Main function
-async function main() {
     await globals.start()
     const wallet = globals.getWallet()
     const keyset = await getKeyset()
     globals.keyset(keyset)
     console.log(keyset)
-
+    
     while (true) {
         try {
             await sleep(10 * 1000)
@@ -61,8 +57,7 @@ async function main() {
             console.error(error)
         }
     }
-}
-main(); // Start the program
+});
 
 process.on( 'SIGINT', async function() {
     console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" );
@@ -70,7 +65,9 @@ process.on( 'SIGINT', async function() {
     await wallet.stop()
     // some other closing procedures go here
     process.exit();
-  })
+})
+
+module.exports = app
 
 
 
