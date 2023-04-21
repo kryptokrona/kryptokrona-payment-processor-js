@@ -21,7 +21,7 @@ Are you having trouble with Kryptokrona payment processor? We want to help!
 
 - Ask a question we monitor stackoverflow.com for questions tagged with kryptokrona-payment-processor-js. You can also chat with the community on Hugin or Discord.
 
-- Report bugs with Kryptokrona API at https://github.com/kryptokrona/kryptokrona-payment-processor-js/issues.
+- Report bugs with Kryptokrona payment processor at https://github.com/kryptokrona/kryptokrona-payment-processor-js/issues.
 
 ## Reporting Issues
 
@@ -45,8 +45,6 @@ If you would like to contribute to this project there is two ways:
 - Donate to XKR address
 
 ### Pull Request
-
-We recommend using IntelliJ to work on this project.
 
 We appreciate all contributions whether it be small changes such as documentation of source code to major improvement of code.
 The easiest way is to make a fork and then make a pull request into our develop branch.
