@@ -1,0 +1,6 @@
+import{R as h,T as u}from"./index.88c3ee78.js";import{w as b}from"./index.a0ee06d2.js";function k(t){return t<.5?4*t*t*t:.5*Math.pow(2*t-2,3)+1}function w(t){const n=t-1;return n*n*n+1}function S(t){return t/=.5,t<1?.5*t*t:(t--,-.5*(t*(t-2)-1))}function _(t,{delay:n=0,duration:o=400,easing:e=h}={}){const r=+getComputedStyle(t).opacity;return{delay:n,duration:o,easing:e,css:s=>`opacity: ${s*r}`}}function C(t,{delay:n=0,duration:o=400,easing:e=w,x:r=0,y:s=0,opacity:a=0}={}){const c=getComputedStyle(t),f=+c.opacity,p=c.transform==="none"?"":c.transform,y=f*(1-a),[l,d]=u(r),[m,$]=u(s);return{delay:n,duration:o,easing:e,css:(i,g)=>`
+			transform: ${p} translate(${(1-i)*l}${d}, ${(1-i)*m}${$});
+			opacity: ${f-y*g}`}}function O(t,{delay:n=0,speed:o,duration:e,easing:r=k}={}){let s=t.getTotalLength();const a=getComputedStyle(t);return a.strokeLinecap!=="butt"&&(s+=parseInt(a.strokeWidth)),e===void 0?o===void 0?e=800:e=s/o:typeof e=="function"&&(e=e(s)),{delay:n,duration:e,easing:r,css:(c,f)=>`
+			stroke-dasharray: ${s};
+			stroke-dashoffset: ${f*s};
+		`}}const T=b({step:1,address:void 0,amount:void 0,paymentID:void 0,status:"fetching...",currency:"XKR",returnToSite:"https://example.store"});export{C as a,O as d,_ as f,S as q,T as s};

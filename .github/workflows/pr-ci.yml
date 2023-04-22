@@ -3,7 +3,30 @@ name: kryptokrona-payment-processor-js PR testing
 on: [ pull_request ]
 
 jobs:
-    test:
+     build:
+       name: Build Node ${{ matrix.node-version }}
+       runs-on: ubuntu-latest
+       strategy:
+        matrix:
+         node-version: [16.x, 18.x]
+    
+       steps:
+        - uses: actions/checkout@v3
+        - name: Use Node.js ${{ matrix.node-version }}
+
+          uses: actions/setup-node@v3
+          with:
+           node-version: ${{ matrix.node-version }}
+
+        - name: Install Dependencies
+          run: npm install
+          working-directory: frontend
+        
+        - name: Build
+          run: npm run build
+          working-directory: frontend
+
+     test:
         runs-on: ubuntu-latest
         strategy:
           matrix:
