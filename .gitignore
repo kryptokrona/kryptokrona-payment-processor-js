@@ -1,8 +1,8 @@
 node_modules/
 *.wallet
 .DS_Store
-/build
-/.svelte-kit
+build/
+.svelte-kit
 /package
 .env
 .env.*
